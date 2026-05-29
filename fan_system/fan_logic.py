@@ -16,4 +16,9 @@ class Fan(ElectricalAppliance):
         self.__speed: int = int(speed)
         self.__radius: float = float(radius)
         self.__color: str = str(color)
-        self.__on: bool = bool(on)
+        self.__on: bool =bool(on)
+
+    def display_properties(self) -> None:
+        """Polymorphic implementation displaying clean object telemetry rows."""
+        status_text = "ON" if self.__on else "OFF"
+        print(f"| Speed: {self.__speed} | Radius: {str(self.__radius).ljust(4)} | Color: {self.__color.ljust(6)} | Power Status: {status_text.ljust(3)} |")
