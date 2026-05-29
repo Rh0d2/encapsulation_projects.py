@@ -35,3 +35,28 @@ class Fan(ElectricalAppliance):
 
     def get_on(self) -> bool: 
         return self.__on
+    
+    # --- Mutator Methods (Setters) with State Guardrails ---
+    def set_speed(self, speed: int) -> bool:
+        if speed in [Fan.SLOW, Fan.MEDIUM, Fan.FAST]:
+            self.__speed = speed
+            self.__on = True  # Automatically flag device active if configured to spin
+            return True
+        elif speed == 0:
+            self.__speed = 0
+            self.__on = False
+            return True
+        return False
+
+    def set_radius(self, radius: float) -> None:
+        if radius > 0:
+            self.__radius = float(radius)
+
+    def set_color(self, color: str) -> None:
+        if color.strip():
+            self.__color = color.strip()
+
+    def set_on(self, on: bool) -> None:
+        self.__on = bool(on)
+        if not self.__on:
+            self.__speed = 0  # Reset speed back to neutral if device powers off
