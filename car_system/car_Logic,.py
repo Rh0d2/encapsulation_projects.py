@@ -15,4 +15,7 @@ class Car(Vehicle):
     def display_telemetry(self) -> None:
         """Polymorphic implementation displaying real-time car metrics."""
         print(f"| Model Year: {self.__year_model.ljust(5)} | Make: {self.__make.ljust(12)} | Current Velocity: {str(self.__speed).rjust(3)} km/h |")
-    
+
+    def get_speed(self) -> int:
+        """Returns the current speed value."""
+        return self.__speed
