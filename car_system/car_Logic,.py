@@ -23,3 +23,10 @@ class Car(Vehicle):
     def accelerate(self) -> None:
         """Adds 5 to the speed data attribute each time it is called."""
         self.__speed += 5
+
+    def brake(self) -> None:
+        """Subtracts 5 from the speed data attribute each time it is called, locking at a floor of 0."""
+        if self.__speed >= 5:
+            self.__speed -= 5
+        else:
+            self.__speed = 0
