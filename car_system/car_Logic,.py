@@ -19,3 +19,7 @@ class Car(Vehicle):
     def get_speed(self) -> int:
         """Returns the current speed value."""
         return self.__speed
+    
+    def accelerate(self) -> None:
+        """Adds 5 to the speed data attribute each time it is called."""
+        self.__speed += 5
