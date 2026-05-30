@@ -32,11 +32,11 @@ class CarDashboardUI:
         print("=======================================================")
         print(" [SYSTEM]: Script check complete. Press Enter to boot live panel...")
         input()
-        
+
     def launch_dashboard(self) -> None:
         """Launches the automatic assignment verification, then loads the interactive telemetry core."""
         # Instantiate test car targets using assignment scope constraints
-        active_vehicle = Car(year_model="2026", make="Honda Click")
+        active_vehicle = Car(year_model="2026", make="Honda")
         
         # Run textbook loop constraints on initialization
         self.clear_terminal()
