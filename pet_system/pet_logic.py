@@ -37,3 +37,13 @@ class Pet(RecordTemplate):
     def get_age(self) -> int:
         """Returns the value of the __age field."""
         return self.__age
+    
+    def show_summary(self) -> None:
+        """Uses accessor methods to safely extract and display final data blocks on the screen."""
+        print(f"=====================================================")
+        print(f"             CONFIRMED REGISTRY DATA CARD            ")
+        print(f"=====================================================")
+        print(f" [VITAL]: Pet Name Identity   -> {self.get_name()}")
+        print(f" [VITAL]: Animal Classification -> {self.get_animal_type()}")
+        print(f" [VITAL]: Measured Life Age    -> {self.get_age()} years old")
+        print(f"=====================================================")
