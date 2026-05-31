@@ -24,3 +24,16 @@ class Pet(RecordTemplate):
     def set_age(self, age: int) -> None:
         """Assigns a value to the __age field."""
         self.__age = int(age)
+
+    # --- Accessor Methods (Getters) ---
+    def get_name(self) -> str:
+        """Returns the value of the __name field."""
+        return self.__name
+
+    def get_animal_type(self) -> str:
+        """Returns the value of the __animalType field."""
+        return self.__animal_type
+
+    def get_age(self) -> int:
+        """Returns the value of the __age field."""
+        return self.__age
